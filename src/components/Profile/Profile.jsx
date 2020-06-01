@@ -1,16 +1,27 @@
 import React from 'react';
 import classes from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import ProfileLeft from "./ProfileLeft/ProfileLeft";
+import ProfileRight from "./ProfileRight/ProfileRight";
 
-function Profile() {
-    return(
-        <div>
-            <img src='https://images.unsplash.com/photo-1499084732479-de2c02d45fcc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'/>
-            <div>
-                ava + description
+function Profile(props) {
+
+    return (
+        <div className={classes.profileWrapper}>
+            <div className={classes.info}>
+                <ProfileLeft profileInfo={props.profileInfo}/>
+                <ProfileLeft profileInfo={props.profileInfo}/>
             </div>
-           <MyPosts/>
+            <div className={classes.mainProfile}>
+                <ProfileInfo/>
+                <MyPosts postData={props.postData}/>
+            </div>
+            <div className={classes.anotherInfo}>
+                <ProfileRight profileInfo={props.profileInfo}/>
+            </div>
         </div>
     )
 }
+
 export default Profile;

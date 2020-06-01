@@ -2,20 +2,24 @@ import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from './Post'
 
-function MyPosts() {
+function MyPosts(props) {
+
+    let postItem = props.postData.map( postMessage =>
+        <Post message={postMessage.message} likeCount={postMessage.likeCount}    />
+    )
     return(
-        <div>
-            <div>
+        <div className={classes.postWrapper}>
+            <div className="wrapperContent">
                 My post
                 <div>
                    <textarea></textarea>
-                    <button>Add post</button>
+                    <button className={classes.add}>Add post</button>
+                    <button className={classes.remove}>Cancel</button>
                 </div>
 
             </div>
             <div className={classes.posts}>
-                <Post message='Hi, how are you? ' likeCount="15"    />
-                <Post message='It`s my first post? ' likeCount="20" />
+                {postItem}
             </div>
         </div>
     )
