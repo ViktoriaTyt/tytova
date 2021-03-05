@@ -5,7 +5,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
 import Photo from "./components/Photo/Photo";
 import Dialogs from "./components/Dialogs/Dialogs";
-import News from "./components/News/News";
+import Friends from "./components/Friends/Friends";
 import Music from "./components/Music/Music";
 import Settings from "./components/Settings/Settings";
 import {BrowserRouter, Route} from "react-router-dom";
@@ -24,11 +24,12 @@ function App(props) {
                     <Avatar/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                            <Route path='/dialogs' render = { () => <Dialogs dialogData={props.dialogData} messagesData={props.messagesData}/>}/>
-                            <Route path='/profile' render = { () => <Profile postData={props.postData} profileInfo={props.profileInfo}/>}/>
-                            <Route path='/photo' render = { () => <Photo/>}/>
-                            <Route path='/news' render = { () => <News/>}/>
-                            <Route path='/music' render = { () => <Music/>}/>
+                        <Route path='/profile' render = { () => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                        <Route path='/photo' render = { () => <Photo/>}/>
+                        <Route path='/dialogs' render = { () => <Dialogs store={props.store}/>}/>
+                        <Route path='/friends' render = { () => <Friends state={props.state.friendsPage}/>}/>
+                        <Route path='/music' render = { () => <Music/>}/>
+                        <Route path='/settings' render = { () => <Settings/>}/>
                     </div>
                 </div>
 
