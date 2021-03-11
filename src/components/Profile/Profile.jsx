@@ -1,24 +1,24 @@
 import React from 'react';
 import classes from "./Profile.module.css";
-import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import ProfileLeft from "./ProfileLeft/ProfileLeft";
 import ProfileRight from "./ProfileRight/ProfileRight";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 function Profile(props) {
 
     return (
         <div className={classes.profileWrapper}>
             <div className={classes.info}>
-                <ProfileLeft profileInfo={props.profileInfo}/>
-                <ProfileLeft profileInfo={props.profileInfo}/>
+                <ProfileLeft store={props.store}/>
+                <ProfileLeft store={props.store}/>
             </div>
             <div className={classes.mainProfile}>
                 <ProfileInfo/>
-                <MyPosts postData={props.postData}/>
+                <MyPostsContainer store={props.store}/>
             </div>
             <div className={classes.anotherInfo}>
-                <ProfileRight profileInfo={props.profileInfo}/>
+                <ProfileRight store={props.store}/>
             </div>
         </div>
     )

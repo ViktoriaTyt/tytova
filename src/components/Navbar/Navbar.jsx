@@ -18,7 +18,7 @@ function Navbar() {
             </div>
             <div className={classes.appGroup}>
                 <div className={classes.item}>
-                    <NavLink to='/news' activeClassName={classes.active} >News</NavLink>
+                    <NavLink to='/friends' activeClassName={classes.active} >Friends</NavLink>
                 </div>
                 <div className={classes.item}>
                     <NavLink to='/music' activeClassName={classes.active} >Music</NavLink>
