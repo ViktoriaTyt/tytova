@@ -14,7 +14,7 @@ function Profile(props) {
             </div>
             <div className={classes.mainProfile}>
                 <ProfileInfo/>
-                <MyPostsContainer store={props.store}/>
+                <MyPostsContainer/>
             </div>
             <div className={classes.anotherInfo}>
                 <ProfileRight store={props.store}/>
