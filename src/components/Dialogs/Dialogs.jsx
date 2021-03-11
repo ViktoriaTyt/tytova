@@ -3,7 +3,7 @@ import s from './Dialogs.module.css'
 import Message from "./Message/Message";
 import DialogItem from "./DialogItem/DialogItem";
 import classes from "../Profile/MyPosts/MyPosts.module.css";
-import {addMessageActionCreator, changeTextMessageActionCreator} from "../../redux/state";
+import {addMessageActionCreator, changeTextMessageActionCreator} from "../../redux/dialogs-reducer";
 
 
 const Dialogs = (props) => {
@@ -19,12 +19,12 @@ const Dialogs = (props) => {
     let newMessage = React.createRef();
     let changeTextMessage = (e) => {
         let textMessage = e.target.value;
-         props.store.dispatch(changeTextMessageActionCreator(textMessage));   //ф-ция, которая сидит в state.js
+         props.store.dispatch(changeTextMessageActionCreator(textMessage));   //ф-ция, которая сидит в store.js
         console.log(textMessage)
     }
     let addMessage = () => {
         let textMessage = newMessage.current.value;
-        props.store.dispatch(addMessageActionCreator());   //ф-ция, которая сидит в state.js
+        props.store.dispatch(addMessageActionCreator());   //ф-ция, которая сидит в store.js
 
         console.log(textMessage)
     }

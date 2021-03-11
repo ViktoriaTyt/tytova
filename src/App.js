@@ -24,10 +24,10 @@ function App(props) {
                     <Avatar/>
                     <Navbar/>
                     <div className='app-wrapper-content'>
-                        <Route path='/profile' render = { () => <Profile profilePage={props.state.profilePage} dispatch={props.dispatch}/>}/>
+                        <Route path='/profile' render = { () => <Profile store={props.store}/>}/>
                         <Route path='/photo' render = { () => <Photo/>}/>
                         <Route path='/dialogs' render = { () => <Dialogs store={props.store}/>}/>
-                        <Route path='/friends' render = { () => <Friends state={props.state.friendsPage}/>}/>
+                        <Route path='/friends' render = { () => <Friends store={props.state.friendsPage}/>}/>
                         <Route path='/music' render = { () => <Music/>}/>
                         <Route path='/settings' render = { () => <Settings/>}/>
                     </div>
