@@ -38,8 +38,7 @@ const InfoFriends = (props) => {
             </div>
 };
 const Friends = (props) => {
-
-    let friends = props.state.infoFriend.map(info =>
+    let friends = props.store.getState().friendsPage.infoFriend.map(info =>
         <InfoFriends  name={info.name} country={info.country} numberFriends={info.numberFriends} photos={info.photos} videos={info.videos} />
     )
 

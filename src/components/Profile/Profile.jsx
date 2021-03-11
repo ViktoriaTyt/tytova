@@ -6,7 +6,6 @@ import ProfileRight from "./ProfileRight/ProfileRight";
 import MyPostsContainer from "./MyPosts/MyPostsContainer";
 
 function Profile(props) {
-
     return (
         <div className={classes.profileWrapper}>
             <div className={classes.info}>

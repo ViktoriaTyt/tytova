@@ -4,7 +4,7 @@ import Post from './Post'
 
 function MyPosts(props) {
 
-    let postItem = props.postData.map( postMessage =>
+    let postItem = props.posts.map( postMessage =>
         <Post message={postMessage.message}
               likeCount={postMessage.likeCount}
               id={postMessage.id}   />);
@@ -12,7 +12,7 @@ function MyPosts(props) {
     let newPostElement = React.createRef();
 
     let onAddPost = () => {
-        props.addPost()
+        props.addPost();
     };
     let onPostOnchange = () => {
         let text = newPostElement.current.value;

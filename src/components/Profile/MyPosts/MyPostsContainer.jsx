@@ -5,7 +5,7 @@
 function MyPostsContainer(props) {
     let state = props.store.getState();
     let addPost = () => {
-        props.store.dispatch(addPostActionCreator( ));   //ф-ция, которая сидит в store.js
+        props.store.dispatch(addPostActionCreator() );   //ф-ция, которая сидит в store.js
 
     };
     let onPostOnchange = (text) => {
@@ -16,7 +16,7 @@ function MyPostsContainer(props) {
     return(
         <MyPosts onPostChangeActionCreator={onPostOnchange}
                  addPost={addPost}
-                 posts={state.profilePage.posts}
+                 posts={state.profilePage.postData}
                  newPostText={state.profilePage.newPostText}/>
     )
 }

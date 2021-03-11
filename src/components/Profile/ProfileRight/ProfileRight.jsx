@@ -14,7 +14,7 @@ const ProfileText = (props) => {
 
 function ProfileRight(props) {
 
-    let profileElem = props.profileInfo.map(info =>
+    let profileElem = props.store.getState().profilePage.profileInfo.map(info =>
         <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
     );
     return(
