@@ -2,49 +2,41 @@ import React from "react";
 import s from './Friends.module.css';
 import StoreContext from "../../StoreContext";
 
-
-const InfoFriends = () => {
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                let state = store.getState().friendsPage.infoFriend;
-
-                return <div className={s.item}>
-                    <div className={s.itemHeader}>
-                        <img src="../../images/friend1.jpg" alt="images"/>
-                    </div>
-                    <div className={s.itemContent}>
-                        <div className={s.itemMore}>
-                            <img src="../../images/more.png" alt="images"/>
-                        </div>
-                        <div className={s.friendAvatar}>
-                            <div className={s.authorThumb}>
-                                <img src="../../images/avatar1.jpg" alt="images"/>
-                            </div>
-                            <div className={s.authorContent}>
-                                <a href="#" className={s.authorName}>{state.name}</a>
-                                <div className={s.country}>{state.country}</div>
-                            </div>
-                        </div>
-                        <div className={s.container}>
-                            <a href="#" className={s.friendCount}>
-                                <div className={s.number}>{state.numberFriends}</div>
-                                <div className={s.title}>Friends</div>
-                            </a>
-                            <a href="#" className={s.friendCount}>
-                                <div className={s.number}>{state.photos}</div>
-                                <div className={s.title}>Photos</div>
-                            </a>
-                            <a href="#" className={s.friendCount}>
-                                <div className={s.number}>{state.videos}</div>
-                                <div className={s.title}>Videos</div>
-                            </a>
-                        </div>
-                    </div>
+const InfoFriends = (props) => {
+    return <div className={s.item}>
+        <div className={s.itemHeader}>
+            <img src="../../images/friend1.jpg" alt="images"/>
+        </div>
+        <div className={s.itemContent}>
+            <div className={s.itemMore}>
+                <img src="../../images/more.png" alt="images"/>
+            </div>
+            <div className={s.friendAvatar}>
+                <div className={s.authorThumb}>
+                    <img src="../../images/avatar1.jpg" alt="images"/>
                 </div>
-            }}
-        </StoreContext.Consumer>
-    )
+                <div className={s.authorContent}>
+                    <a href="#" className={s.authorName}>{props.name}</a>
+                    <div className={s.country}>{props.country}</div>
+                </div>
+            </div>
+            <div className={s.container}>
+                <a href="#" className={s.friendCount}>
+                    <div className={s.number}>{props.numberFriends}</div>
+                    <div className={s.title}>Friends</div>
+                </a>
+                <a href="#" className={s.friendCount}>
+                    <div className={s.number}>{props.photos}</div>
+                    <div className={s.title}>Photos</div>
+                </a>
+                <a href="#" className={s.friendCount}>
+                    <div className={s.number}>{props.videos}</div>
+                    <div className={s.title}>Videos</div>
+                </a>
+            </div>
+        </div>
+    </div>
+
 };
 const Friends = () => {
     return (

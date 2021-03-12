@@ -10,7 +10,7 @@ let InitialState = {
         {name: "Michael Maximoff", country: "Portland, OR", numberFriends: 58, photos: 304, videos: 19}
     ]
 }
-const friendsReducer = (state = InitialState, action) => {
+const friendsReducer = (state = InitialState) => {
     return state;
 }
 
