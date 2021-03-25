@@ -4,7 +4,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import StoreContext from "./StoreContext";
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
 
@@ -15,7 +14,7 @@ let rerenderEntireTree = (state) => {
             <Provider value={store}>
                 <App/>
             </Provider>
-        </BrowserRouter>, document.getElementById('root'));
+        </BrowserRouter> , document.getElementById('root'));
 };
 
 
