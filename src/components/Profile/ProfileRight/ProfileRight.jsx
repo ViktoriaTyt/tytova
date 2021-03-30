@@ -14,24 +14,18 @@ const ProfileText = (props) => {
 }
 
 function ProfileRight(props) {
-    return (
-        <StoreContext.Consumer>
-            {(store) => {
-                let profileElem = store.getState().profilePage.profileInfo.map(info =>
-                    <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
-                );
-                return <div className="profileInfo">
-                    <div className="wrapperInfo">
-                        <h6 className="titleInfo">
-                            Profile Intro
-                        </h6>
-                        {profileElem}
-                    </div>
-                </div>
-            }}
+    let profileElem = props.profilePage.profileInfo.map(info =>
+        <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
+    );
+    return <div className="profileInfo">
+        <div className="wrapperInfo">
+            <h6 className="titleInfo">
+                Profile Intro
+            </h6>
+            {profileElem}
+        </div>
+    </div>
 
-        </StoreContext.Consumer>
-    )
 }
 
 export default ProfileRight;

@@ -14,7 +14,6 @@ import ProfileLeft from "./components/Profile/ProfileLeft/ProfileLeft";
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 function App(props) {
-
     return (
             <div className='app-wrapper'>
                 <Header/>

@@ -3,7 +3,7 @@ import classes from "./ProfileLeft.module.css";
 import StoreContext from "../../../StoreContext";
 
 const ProfileText = (props) => {
-    return  <div className="contentInfo">
+    return <div className="contentInfo">
         <p className="mainText">
             {props.infoTitle}
         </p>
@@ -13,26 +13,19 @@ const ProfileText = (props) => {
     </div>
 }
 
-function ProfileLeft() {
+function ProfileLeft(props) {
+    let profileElem = props.profilePage.profileInfo.map(info =>
+        <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
+    );
+    return <div className="profileInfo">
+        <div className="wrapperInfo">
+            <h6 className="titleInfo">
+                Profile Intro
+            </h6>
+            {profileElem}
+        </div>
+    </div>
 
-    return(
-        <StoreContext.Consumer>
-            {(store) => {
-                let state = store.getState();
-                let profileElem = state.profilePage.profileInfo.map(info =>
-                    <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
-                );
-                return  <div className="profileInfo">
-                    <div  className="wrapperInfo">
-                        <h6  className="titleInfo">
-                            Profile Intro
-                        </h6>
-                        {profileElem}
-                    </div>
-                </div>
-            }}
-
-        </StoreContext.Consumer>
-    )
 }
+
 export default ProfileLeft;
