@@ -10,6 +10,17 @@
     text-transform: uppercase;
     color: #fff;
     font-weight: 700;
-    padding: 17px 18px 26px 50px;
     margin: 0;
+}
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+.wrapperLogin a, .wrapperLogin {
+    color: #efebeb;
+    font-weight: 600;
 }

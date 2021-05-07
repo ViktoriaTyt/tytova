@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from "./MyPosts.module.css";
 import Post from './Post'
+import PostReduxForm from "./PostForm";
 
 function MyPosts(props) {
 
@@ -9,24 +10,15 @@ function MyPosts(props) {
               likeCount={postMessage.likeCount}
               id={postMessage.id}   />);
 
-    let newPostElement = React.createRef();
-
-    let onAddPost = () => {
-        props.addPost();
-    };
-    let onPostOnchange = () => {
-        let text = newPostElement.current.value;
-        props.onPostChangeActionCreator(text);
-
+    let onSubmit = (values) => {
+        props.addPost(values.postArea);
     }
     return(
         <div className={classes.postWrapper}>
             <div className="wrapperContent">
                 My post
                 <div>
-                   <textarea ref={newPostElement} onChange={onPostOnchange} value={props.newPostText} />
-                    <button className={classes.add} onClick={ onAddPost }>Add post</button>
-                    <button className={classes.remove}>Cancel</button>
+                   <PostReduxForm onSubmit={onSubmit}/>
                 </div>
 
             </div>

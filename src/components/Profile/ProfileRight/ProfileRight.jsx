@@ -1,6 +1,5 @@
 import React from 'react';
-import classes from "./ProfileRight.module.css";
-import StoreContext from "../../../StoreContext";
+import {connect} from "react-redux";
 
 const ProfileText = (props) => {
     return <div className="contentInfo">
@@ -14,7 +13,8 @@ const ProfileText = (props) => {
 }
 
 function ProfileRight(props) {
-    let profileElem = props.profilePage.profileInfo.map(info =>
+    const {profileInfo} = props;
+    let profileElem = profileInfo.map(info =>
         <ProfileText infoTitle={info.infoTitle} infoDescription={info.infoDescription}/>
     );
     return <div className="profileInfo">
@@ -28,4 +28,10 @@ function ProfileRight(props) {
 
 }
 
-export default ProfileRight;
+let mapStateToProps = (state) => {
+    return {
+        profileInfo: state.profilePage.profileInfo
+    }
+}
+
+export default connect(mapStateToProps)(ProfileRight);

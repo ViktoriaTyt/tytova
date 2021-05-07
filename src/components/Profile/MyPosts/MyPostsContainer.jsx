@@ -11,12 +11,8 @@
  }
  let mapDispatchToProps =(dispatch) => {
      return {
-         onPostChangeActionCreator: (text) => {
-             let actionOnPost = onPostChangeActionCreator(text);
-             dispatch(actionOnPost);   //ф-ция, которая сидит в store.js
-         },
-         addPost: () => {
-             dispatch(addPostActionCreator() );   //ф-ция, которая сидит в store.js
+         addPost: (postArea) => {
+             dispatch(addPostActionCreator(postArea) );   //ф-ция, которая сидит в store.js
          }
      }
  }
